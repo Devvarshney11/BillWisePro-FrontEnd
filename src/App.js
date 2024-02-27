@@ -1,9 +1,14 @@
 import "./App.css";
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Sidebar from "./Components/Sidebar";
 import Body from "./Components/Body";
 import Login from "./Components/Login";
+import { useEffect, useState } from "react";
+import Loader from "./common/Loader";
+import "./css/satoshi.css";
+import "jsvectormap/dist/css/jsvectormap.css";
+import "flatpickr/dist/flatpickr.min.css";
+
 const isLogged = localStorage.getItem("acessToken");
 const appRoutes = createBrowserRouter([
   {
@@ -16,12 +21,12 @@ const appRoutes = createBrowserRouter([
   },
 ]);
 function App() {
-  return (
-    <>
-      {isLogged ? <Sidebar /> : null}
-      <RouterProvider router={appRoutes} />{" "}
-    </>
-  );
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 1000);
+  }, []);
+
+  return loading ? <Loader /> : <RouterProvider router={appRoutes} />;
 }
 
 export default App;
