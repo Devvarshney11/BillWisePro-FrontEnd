@@ -3,6 +3,9 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Body from "./Components/Body";
 import Login from "./Components/Login";
+import ShowItems from "./Components/Items/ShowItems";
+import SingleItem from "./Components/Items/SingleItem";
+import AddItems from "./Components/Items/AddItems";
 import { useEffect, useState } from "react";
 import Loader from "./common/Loader";
 import "./css/satoshi.css";
@@ -18,6 +21,18 @@ const appRoutes = createBrowserRouter([
   {
     path: "/login",
     element: isLogged ? <Body /> : <Login />,
+  },
+  {
+    path: "/showItems",
+    element: isLogged ? <ShowItems /> : <Login />,
+  },
+  {
+    path: "/showItems/:id",
+    element: isLogged ? <SingleItem /> : <Login />,
+  },
+  {
+    path: "/addItems",
+    element: isLogged ? <AddItems /> : <Login />,
   },
 ]);
 function App() {
