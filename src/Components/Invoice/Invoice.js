@@ -97,9 +97,11 @@ const Invoice = () => {
               </p>
               <h2 class="text-xl font-bold">Amount Due</h2>
               <p class="text-3xl font-bold text-red-600">
-                {invoiceData.saleInvoice[0].total_amount -
+                {(
+                  invoiceData.saleInvoice[0].total_amount -
                   invoiceData.saleInvoice[0].amount_received -
-                  invoiceData.saleInvoice[0].discount_amount}
+                  invoiceData.saleInvoice[0].discount_amount
+                ).toFixed(2)}
               </p>
             </div>
           </div>

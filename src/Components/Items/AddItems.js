@@ -22,6 +22,7 @@ const AddItems = () => {
   const Min_Stock = useRef(null);
   const Quantity = useRef(null);
   const Name = useRef(null);
+  const user = JSON.parse(localStorage.getItem("user"));
   const handleFormSubmit = async () => {
     if (
       !Item_HSN.current.value ||
@@ -44,7 +45,7 @@ const AddItems = () => {
         Min_Stock: Min_Stock.current.value,
         Quantity: Quantity.current.value,
         Name: Name.current.value,
-        user_id: 1,
+        user_id: user.user_id,
       };
       try {
         const response = await axios.post(

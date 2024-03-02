@@ -6,10 +6,11 @@ import { useNavigate } from "react-router-dom";
 const ShowItems = () => {
   const [itemData, setItemData] = useState(null);
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user"));
   const fetchData = async () => {
     try {
       const response = await axios.post("http://localhost:5000/items", {
-        user_id: 1,
+        user_id: user.user_id,
       });
       setItemData(response.data.items);
       console.log(response.data.items);

@@ -10,6 +10,7 @@ import ShowParty from "./Components/Parties/ShowParty";
 import SingleParty from "./Components/Parties/SingleParty";
 import AddParty from "./Components/Parties/AddParty";
 import Invoice from "./Components/Invoice/Invoice";
+import NotFound404 from "./common/NotFound404";
 import { useEffect, useState } from "react";
 import Loader from "./common/Loader";
 import "./css/satoshi.css";
@@ -53,6 +54,10 @@ const appRoutes = createBrowserRouter([
   {
     path: "/invoice/:id",
     element: isLogged ? <Invoice /> : <Login />,
+  },
+  {
+    path: "*",
+    element: <NotFound404 />,
   },
 ]);
 function App() {

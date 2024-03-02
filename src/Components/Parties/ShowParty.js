@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const ShowParty = () => {
   const [partiesData, setPartiesData] = useState(null);
   const user = JSON.parse(localStorage.getItem("user"));
+  console.log(user);
   const navigate = useNavigate();
   const fetchData = async () => {
     const data = {

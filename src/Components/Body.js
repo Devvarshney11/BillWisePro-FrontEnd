@@ -13,6 +13,7 @@ const Body = () => {
         <button
           onClick={() => {
             localStorage.removeItem("acessToken");
+            localStorage.removeItem("user");
             window.location.href = "/login";
           }}
         >

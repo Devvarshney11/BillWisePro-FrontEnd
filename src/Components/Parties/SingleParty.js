@@ -198,7 +198,11 @@ const SingleParty = () => {
 
               <div className=" items-center justify-center p-2.5 sm:flex xl:p-5">
                 <p className="text-red-500">
-                  {t.total_amount - t.amount_received}
+                  {(
+                    t.total_amount -
+                    t.amount_received -
+                    t.discount_amount
+                  ).toFixed(2)}
                 </p>
               </div>
               <div className="items-center justify-center p-2.5 sm:flex xl:p-5">
