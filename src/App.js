@@ -9,6 +9,7 @@ import AddItems from "./Components/Items/AddItems";
 import ShowParty from "./Components/Parties/ShowParty";
 import SingleParty from "./Components/Parties/SingleParty";
 import AddParty from "./Components/Parties/AddParty";
+import Invoice from "./Components/Invoice/Invoice";
 import { useEffect, useState } from "react";
 import Loader from "./common/Loader";
 import "./css/satoshi.css";
@@ -48,6 +49,10 @@ const appRoutes = createBrowserRouter([
   {
     path: "/addParty",
     element: isLogged ? <AddParty /> : <Login />,
+  },
+  {
+    path: "/invoice/:id",
+    element: isLogged ? <Invoice /> : <Login />,
   },
 ]);
 function App() {

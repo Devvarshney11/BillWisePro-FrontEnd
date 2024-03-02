@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import DefaultLayout from "../DefaultLayout";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const SingleParty = () => {
   const para = useParams();
+  const navigate = useNavigate();
   const [partyData, setPartyData] = useState(null);
   const [transactionData, setTransactionData] = useState(null);
   const fetchData = async () => {
@@ -203,9 +204,9 @@ const SingleParty = () => {
               <div className="items-center justify-center p-2.5 sm:flex xl:p-5">
                 <button
                   className="text-blue-500"
-                  // onClick={() => {
-                  //   navigate(`/showParty/${partiesData.party_id}`);
-                  // }}
+                  onClick={() => {
+                    navigate(`/invoice/${t.sale_id}`);
+                  }}
                 >
                   View More
                 </button>

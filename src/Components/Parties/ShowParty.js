@@ -4,22 +4,12 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const ShowParty = () => {
-  // "party_id": 2,
-  // "name": "Dev Varshney",
-  // "GSTIN": "fklsdnf;lksdf",
-  // "phone_number": 9368015704,
-  // "email_id": "ksjdfh",
-  // "address": "kdjslfhl;sd",
-  // "notice_period": 1,
-  // "limit_amount": 100,
-  // "to_get": 0,
-  // "to_pay": 0,
-  // "user_id": 1
   const [partiesData, setPartiesData] = useState(null);
+  const user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
   const fetchData = async () => {
     const data = {
-      user_id: 1,
+      user_id: user.user_id,
     };
     const response = await axios.post("http://localhost:5000/getParties", data);
     setPartiesData(response.data.parties);
