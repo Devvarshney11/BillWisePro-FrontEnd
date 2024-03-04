@@ -11,6 +11,8 @@ import SingleParty from "./Components/Parties/SingleParty";
 import AddParty from "./Components/Parties/AddParty";
 import Invoice from "./Components/Invoice/Invoice";
 import NotFound404 from "./common/NotFound404";
+import Profile from "./Components/Profiles/Profile";
+import EditProfile from "./Components/Profiles/EditProfile";
 import { useEffect, useState } from "react";
 import Loader from "./common/Loader";
 import "./css/satoshi.css";
@@ -54,6 +56,14 @@ const appRoutes = createBrowserRouter([
   {
     path: "/invoice/:id",
     element: isLogged ? <Invoice /> : <Login />,
+  },
+  {
+    path: "/profile",
+    element: isLogged ? <Profile /> : <Login />,
+  },
+  {
+    path: "/editProfile",
+    element: isLogged ? <EditProfile /> : <Login />,
   },
   {
     path: "*",
