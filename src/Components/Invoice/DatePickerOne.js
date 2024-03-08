@@ -17,7 +17,7 @@ const DatePickerOne = ({ date, setDate }) => {
   }, []);
   return (
     <div>
-      <label className="mb-3 block text-sm font-medium">Date picker</label>
+      <label className="mb-3 block text-sm font-medium">Inovice Date</label>
       <div className="relative">
         <input
           className="form-datepicker w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal outline-none transition focus:border-primary active:border-primary"
