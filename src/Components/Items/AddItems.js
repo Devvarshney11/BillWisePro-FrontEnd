@@ -3,15 +3,6 @@ import DefaultLayout from "../DefaultLayout";
 import { notify } from "../../Utils/Toast";
 import { ToastContainer } from "react-toastify";
 import axios from "axios";
-// Item_HSN,
-//         Category,
-//         Sale_price,
-//         Cost_price,
-//         Tax,
-//         Min_Stock,
-//         Quantity,
-//         Name,
-//         user_id,
 
 const AddItems = () => {
   const Item_HSN = useRef(null);

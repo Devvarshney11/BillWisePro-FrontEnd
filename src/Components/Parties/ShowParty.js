@@ -9,11 +9,18 @@ const ShowParty = () => {
   console.log(user);
   const navigate = useNavigate();
   const fetchData = async () => {
-    const data = {
-      user_id: user.user_id,
-    };
-    const response = await axios.post("http://localhost:5000/getParties", data);
-    setPartiesData(response.data.parties);
+    try {
+      const data = {
+        user_id: user.user_id,
+      };
+      const response = await axios.post(
+        "http://localhost:5000/getParties",
+        data
+      );
+      setPartiesData(response.data.parties);
+    } catch (e) {
+      console.log(e);
+    }
   };
   useEffect(() => {
     fetchData();

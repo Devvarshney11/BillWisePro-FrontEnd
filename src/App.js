@@ -18,6 +18,8 @@ import Loader from "./common/Loader";
 import "./css/satoshi.css";
 import "jsvectormap/dist/css/jsvectormap.css";
 import "flatpickr/dist/flatpickr.min.css";
+import SaleInvoice from "./Components/Invoice/SaleInvoice";
+import PurchaseInvoice from "./Components/Invoice/PurchaseInvoice";
 
 const isLogged = localStorage.getItem("acessToken");
 const appRoutes = createBrowserRouter([
@@ -68,6 +70,14 @@ const appRoutes = createBrowserRouter([
   {
     path: "*",
     element: <NotFound404 />,
+  },
+  {
+    path: "/addSale",
+    element: isLogged ? <SaleInvoice /> : <Login />,
+  },
+  {
+    path: "/addPurchase",
+    element: isLogged ? <PurchaseInvoice /> : <Login />,
   },
 ]);
 function App() {
