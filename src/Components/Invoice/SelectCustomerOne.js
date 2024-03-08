@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SelectGroupOne = ({ name, arr, setCustomer }) => {
+const SelectCustomerOne = ({ name, arr, setCustomer }) => {
   const [selectedOption, setSelectedOption] = useState("");
   const [isOptionSelected, setIsOptionSelected] = useState(false);
 
@@ -64,4 +64,4 @@ const SelectGroupOne = ({ name, arr, setCustomer }) => {
   );
 };
 
-export default SelectGroupOne;
+export default SelectCustomerOne;
