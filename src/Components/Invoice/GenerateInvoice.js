@@ -5,8 +5,10 @@ import SelectCustomerOne from "./SelectCustomerOne";
 import DatePickerOne from "./DatePickerOne";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const GenerateInvoice = ({ type }) => {
+  const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
   const [count, setCount] = useState(0);
   const [balance, setBalance] = useState(0);
@@ -70,6 +72,9 @@ const GenerateInvoice = ({ type }) => {
       }),
     };
     console.log(data);
+    const response = await axios.post("http://localhost:5000/generate", data);
+    console.log(response);
+    navigate("/invoice/" + response.data.invoice_no);
   };
   const calculateTotalDiscount = (items) => {
     let totalDiscount = 0;
@@ -250,7 +255,7 @@ const GenerateInvoice = ({ type }) => {
               <div className="mb-4.5 flex flex-col gap-6 xl:flex-row">
                 <div className="w-full xl:w-1/4">
                   <SelectCustomerOne
-                    name={"Customer"}
+                    name={"Party Name"}
                     arr={partiesData}
                     setCustomer={setCustomer}
                   />
@@ -442,7 +447,7 @@ const GenerateInvoice = ({ type }) => {
                 handleFormSubmit();
               }}
             >
-              Generate Bill
+              {type == "sale" ? "Generate Sale" : "Generate Purchase"}
             </button>
           </div>
         </form>

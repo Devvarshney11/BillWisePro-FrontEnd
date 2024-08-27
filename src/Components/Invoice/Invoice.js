@@ -69,7 +69,7 @@ const Invoice = () => {
                     (item.Sale_price * item.Tax * item.item_qty) / 100;
                   return (
                     <tr key={item.item_id}>
-                      <td className="border p-2">{item.i_name}</td>
+                      <td className="border p-2">{item.item_name}</td>
                       <td className="border p-2">{item.Sale_price}</td>
                       <td className="border p-2">{item.item_qty}</td>
                       <td className="border p-2">{item.Tax}</td>
