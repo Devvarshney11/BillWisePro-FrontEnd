@@ -79,7 +79,7 @@ const Login = () => {
       <div className="flex flex-col md:flex-row h-screen items-center">
         <div className="hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen bg-orange-500">
           <img
-            src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZmluYW5jaWFsJTIwc2VydmljZXN8ZW58MHx8MHx8fDA%3D"
+            src="https://media.licdn.com/dms/image/D4D12AQHRwAbYljPfZQ/article-cover_image-shrink_720_1280/0/1665054129407?e=2147483647&v=beta&t=83ratlBXGF7C0esel1peZlEwTsOlq-3OQW3TRjoiX2o"
             alt=""
             className="w-full h-full object-cover"
           />
@@ -90,7 +90,13 @@ const Login = () => {
         >
           <ToastContainer />
           <div className="w-full h-100 text-center">
-            <h1 className="text-4xl md:text-5xl leading-tight mt-5 font-serif">
+            <div>
+              <img
+                src="https://i.ibb.co/xC7WtG7/Bill-Wise-Pro-Custom-Blue.png"
+                className="w-50 mx-auto" // Adjust size as needed
+              />
+            </div>
+            <h1 className="text-4xl md:text-5xl leading-tight mt-2 font-serif">
               {isLogged ? "Log IN" : "Sign UP"}
             </h1>
             <form
